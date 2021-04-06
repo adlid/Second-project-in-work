@@ -1,0 +1,27 @@
+mixin icon(id, className)
+	svg(xmlns:xlink="http://www.w3.org/1999/xlink" class=className)
+		use(xlink:href="#tmpl-hh__icon-" + id href="#tmpl-hh__icon-" + id)
+
+mixin video(video, thumbnail, source="youtube")
+	.video(data-video-id=video data-video-source=source)
+		img.video__preview(src=thumbnail)
+		.video__play-btn
+			+icon('play-btn')
+
+mixin icon-card(icon, title)
+	.icon-card
+		.icon-card__icon-block
+			+icon(icon, 'icon-card__icon')
+		.icon-card__title!=title
+
+mixin company-block(title, imgSrc)
+	.company-block
+		.company-block__content
+			.company-block__title!=title
+			.company-block__text
+				block
+		img.company-block__img(src=imgSrc)
+
+mixin gallery-slider-slide(imgSrc)
+	.swiper-slide.gallery-slider-slide
+		img.gallery-slider-slide__img(src=imgSrc)

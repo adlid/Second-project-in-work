@@ -1,0 +1,101 @@
+extends ./pug/layout
+
+block content
+	<!-- START SECTION FIRST SCREEN -->
+	.section.s-first-screen
+		.s-first-screen__content
+			.container
+				.header
+					img.logo(src="/images/logo.svg")
+					img.logo-mobile(src="/images/logo-mobile.svg")
+					a.header-link(href='https://taudevelopment.com/' target='_blank') taudevelopment.com
+				.usp
+					.usp__title Новатор в&#160;области <br>строительства <br>и&#160;девелопмента
+					button.vacancy-btn.btn(type='button') Вакансии
+	<!-- END SECTION FIRST SCREEN -->
+
+	<!-- START SECTION DEVELOPMENT -->
+	.section.section--long.s-development
+		.s-development__wrapper
+			.s-development__content
+				.container
+					.s-development__container
+						.title
+							span.title__wrapper TAU DEVELOPMENT
+						.s-development__text Применяем инновационный подход к строительству.<br>С любовью меняем мир вокруг, ведь мы те, где мы живем.
+	<!-- END SECTION DEVELOPMENT -->
+
+	<!-- START SECTION MISSION -->
+	.section.section--long-pb.s-mission
+		.container
+			.image-block
+				img.image-block__img(src="/images/mission-img.jpg")
+				.image-block__content
+					.title.image-block__title
+						span.title__wrapper МИССИЯ
+					.image-block__text
+						p Миссия компании заключается в&#160;том, чтобы внедрить на&#160;строительный рынок Казахстана новые стандарты качества, создать новое поколение объектов жилой недвижимости, призванные изменить профиль города и&#160;обеспечить гражданам достойный уровень комфорта и&#160;безопасности.
+						p Компания реализует проекты, которые гармонично сочетают в себе все ключевые составляющие для достойной жизни казахстанцев: качество – комфорт – эстетика – доступность.
+					button.vacancy-btn.btn.image-block__btn(type='button') Вакансии
+	<!-- END SECTION MISSION -->
+
+	<!-- START SECTION COMPANY -->
+	.section.section--medium-pb.s-company
+		.container
+			.title.title--centered
+				.title__wrapper Принципы компании
+			.company-slider.swiper-container
+				.swiper-wrapper
+					.swiper-slide
+						+company-block("Новаторство", "/images/company/company-img-01.png")
+							p Жилые комплексы компании разрабатываются с&#160;учетом передовой международной практики и&#160;при коллегиальном участии мировых опытных консультантов в&#160;части архитектуры и&#160;дизайна, планирования и&#160;проектного управления.
+							p Каждый проект компании — это новое решение, которое позволяет TAU Development занимать авангардные позиции на&#160;рынке жилой недвижимости города Алматы.
+					.swiper-slide
+						+company-block("Профессионализм", "/images/company/company-img-02.png")
+							p Все сотрудники компании — профессионалы своего дела, ориентированные на&#160;лучшие результаты. Успех каждого проекта обеспечивается высококвалифицированным подходом на&#160;каждом этапе работы:
+							| - проектирование
+							br
+							| - строительство
+							br
+							| - продажа
+					.swiper-slide
+						+company-block("Результат", "/images/company/company-img-03.png")
+							p На сегодня все проекты компании получили признани на&#160;международных конкурсах и&#160;площадках (таких как World/International Property Awards — Asia Pacific, MIPIM), что подтверждает прогрессивность компании, инновационность проектов и&#160;их соответствие международным стандартам.
+			.slider-nav-controllers.company-nav-controllers
+				button(type='button').slider-nav__arrow.slider-nav__arrow--prev.company-nav-prev
+					+icon('arrow-left')
+				.swiper-pagination.company-slider-pagination
+				button(type='button').slider-nav__arrow.slider-nav__arrow--next.company-nav-next
+					+icon('arrow-right')
+	<!-- END SECTION COMPANY -->
+
+	<!-- START SECTION OFFER -->
+	.section.section--long.s-offer
+		.container
+			.title.title--mb-long.title--centered
+				.title__wrapper Компания может предложить
+			.icon-cards
+				+icon-card('users','Дружный <br>высокопрофессиональный <br>коллектив')
+				+icon-card('promotion','Развитие <br>по&#160;карьерной лестнице')
+				+icon-card('food','Оплачиваемые <br>обеды на&#160;обьектах')
+				+icon-card('suitcase','Работу в&#160;самых интересных в&#160;плане архитектурных, технических и&#160;дизайнерских решений, проектах, призванных сделать наш город еще красивее')
+	<!-- END SECTION OFFER -->
+
+	<!-- START SECTION CORPORATE -->
+	.section.section--long-pb.s-corporate
+		.container
+			.title.title--mb-long.title--centered
+				.title__wrapper Корпоративная жизнь
+			.corporate-slider.swiper-container.gallery-slider(data-pagination=".tmpl-hh__corporate-slider-pagination" data-arrow-prev=".tmpl-hh__corporate-nav-prev" data-arrow-next=".tmpl-hh__corporate-nav-next")
+				.swiper-wrapper
+					+gallery-slider-slide("/images/corporate/corporate-img-01.jpg")
+					+gallery-slider-slide("/images/corporate/corporate-img-02.jpg")
+					+gallery-slider-slide("/images/corporate/corporate-img-03.jpg")
+					+gallery-slider-slide("/images/corporate/corporate-img-04.jpg")
+			.slider-nav-controllers.corporate-nav-controllers
+				button(type='button').slider-nav__arrow.slider-nav__arrow--prev.corporate-nav-prev
+					+icon('arrow-left')
+				.swiper-pagination.corporate-slider-pagination
+				button(type='button').slider-nav__arrow.slider-nav__arrow--next.corporate-nav-next
+					+icon('arrow-right')
+	<!-- END SECTION CORPORATE -->
